@@ -1,5 +1,8 @@
 package com.user.demo.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +37,20 @@ public class CardServiceImpl implements CardService{
 	public void createTransaction(TransactionDto transactionDto) {
 		transactionRepository.save(TransactionsConverter.dtoToEntity(transactionDto));
 		
+	}
+
+	@Override
+	public List<TransactionDto> getTransactions(int accountID) {
+		List<TransactionDto> txDto = TransactionsConverter.entityToDtoList(accountID);
+		List<TransactionDto> tempList = new ArrayList<TransactionDto>();
+		for (TransactionDto transactionDto : txDto) {
+			if(transactionDto.getBalance() < 0)
+			{
+				tempList.add(transactionDto);
+			}
+			
+		}
+		return tempList;
 	}
 
 	

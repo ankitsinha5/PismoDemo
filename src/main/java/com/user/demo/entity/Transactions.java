@@ -23,6 +23,8 @@ public class Transactions {
 	private float amount;
 	@Column
 	private Date eventDate;
+	@Column
+	private float balance;
 	
 	public Transactions(int transaction_Id2, Object object) {
 		// TODO Auto-generated constructor stub
@@ -56,6 +58,12 @@ public class Transactions {
 	}
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
+	}
+	public float getBalance() {
+		return balance;
+	}
+	public void setBalance(float balance) {
+		this.balance = balance;
 	}
 	
 	

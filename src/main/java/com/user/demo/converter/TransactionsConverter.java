@@ -1,5 +1,7 @@
 package com.user.demo.converter;
 
+import java.util.List;
+
 import com.user.demo.dto.Accountdto;
 import com.user.demo.dto.TransactionDto;
 import com.user.demo.entity.Account;
@@ -19,6 +21,12 @@ public class TransactionsConverter {
 	
 	public static TransactionDto entityToDto(Transactions transaction) {
 		TransactionDto transactionDto = new TransactionDto(transaction.getTransaction_Id(), transaction.getAccount_ID());
+	//	userDto.setSkillDtos(user.getSkills().stream().map(SkillConverter::entityToDto).collect(Collectors.toList()));
+		return transactionDto;
+	}
+	
+	public static List<TransactionDto> entityToDtoList(int accountID) {
+		List<TransactionDto> transactionDto = (List<TransactionDto>) new TransactionDto(accountID);
 	//	userDto.setSkillDtos(user.getSkills().stream().map(SkillConverter::entityToDto).collect(Collectors.toList()));
 		return transactionDto;
 	}

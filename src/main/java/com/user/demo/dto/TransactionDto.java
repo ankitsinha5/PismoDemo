@@ -13,8 +13,14 @@ public class TransactionDto {
 	 float amount;
 	
 	 Date eventDate;
+	 
+	 float balance;
 
 	public TransactionDto(int transaction_Id2, int account_ID2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public TransactionDto(int accountID) {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -56,6 +62,14 @@ public class TransactionDto {
 
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
+	}
+
+	public float getBalance() {
+		return balance;
+	}
+
+	public void setBalance(float balance) {
+		this.balance = balance;
 	}
 
 }

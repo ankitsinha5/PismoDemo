@@ -17,6 +17,8 @@ public class TransactionController {
 	
 	@RequestMapping(value= "/createTransaction", method= RequestMethod.POST)
 	public void saveAccount(@RequestBody TransactionDto transactionDto) {
+		transactionDto.setBalance(transactionDto.getAmount());
+		
 		cardService.createTransaction(transactionDto);
 	}
 
